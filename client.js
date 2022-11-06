@@ -42,3 +42,28 @@ alt.onServer("attachRopeCar", (player, veh1, veh2, ropeId) => {
     
     alt.emitServer("secondTow", data);
 })
+
+alt.onServer("untowPlayer", (player, ropeId, veh) => {
+
+    native.detachRopeFromEntity(ropeId, player);
+    native.detachRopeFromEntity(ropeId, veh);
+    native.ropeUnloadTextures(ropeId);
+    native.deleteRope(ropeId);
+    
+    alt.emitServer("untowPlayer", veh);
+})
+
+alt.onServer("untowCar", (player, veh1, veh2, rope) => {
+
+    native.detachRopeFromEntity(rope, veh1);
+    native.detachRopeFromEntity(rope, veh2);
+    native.ropeUnloadTextures(rope);
+    native.deleteRope(rope);
+
+    const data = {
+        "Veh1": veh1,
+        "Veh2": veh2
+    }
+    
+    alt.emitServer("untowCar", data);
+})
