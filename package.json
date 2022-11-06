@@ -1,0 +1,17 @@
+{
+  "name": "test-client",
+  "version": "1.0.0",
+  "description": "A Module Test",
+  "main": "client.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gtav",
+    "altv"
+  ],
+  "author": "Dominik/ItzzRe4L",
+  "license": "ISC"
+}
